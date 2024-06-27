@@ -56,8 +56,9 @@
             transition: transform 0.3s ease-in-out;
             background: #333; /* Darker background for contrast */
             color: #fff; /* Ensure text is white */
-            margin: 20px;
+            margin: 20px auto;
             padding: 20px;
+            max-width: 300px; /* Restrict the width */
         }
         .product-card:hover {
             transform: scale(1.05);
@@ -78,6 +79,19 @@
         .button:hover {
             background-color: #ff0000;
         }
+        .content-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        section {
+            margin-bottom: 40px;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 <body>
@@ -97,18 +111,20 @@
         <section id="home">
             <h2>Home</h2>
             <p>Display stock images and show the newest stuff</p>
-            <!-- Example Product Cards -->
-            <div class="product-card">
-                <img src="OMEN_logo_dia_rgb_black.png" alt="OMEN Logo">
-                <h2>Product 1</h2>
-                <p>$199.99</p>
-                <a href="#" class="button">Buy Now</a>
-            </div>
-            <div class="product-card">
-                <img src="OMEN_logo_dia_rgb_white.png" alt="OMEN Logo">
-                <h2>Product 2</h2>
-                <p>$299.99</p>
-                <a href="#" class="button">Buy Now</a>
+            <div class="content-wrapper">
+                <!-- Example Product Cards -->
+                <div class="product-card">
+                    <img src="OMEN_logo_dia_rgb_black.png" alt="OMEN Logo">
+                    <h2>Product 1</h2>
+                    <p>$199.99</p>
+                    <a href="#" class="button">Buy Now</a>
+                </div>
+                <div class="product-card">
+                    <img src="OMEN_logo_dia_rgb_white.png" alt="OMEN Logo">
+                    <h2>Product 2</h2>
+                    <p>$299.99</p>
+                    <a href="#" class="button">Buy Now</a>
+                </div>
             </div>
         </section>
         <section id="Laptops">
