@@ -11,12 +11,12 @@
             font-family: 'Montserrat', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #000;
-            color: #fff; /* Set default text color to white */
+            background-color: #fff; /* Background is now white */
+            color: #000; /* Set default text color to black */
         }
         header {
-            background: #000;
-            color: #fff;
+            background: #fff; /* Background is now white */
+            color: #000; /* Text color is now black */
             padding: 1em 0;
             text-align: center;
         }
@@ -29,19 +29,19 @@
             margin: 0 10px;
         }
         nav ul li a {
-            color: #fff;
+            color: #000; /* Text color is now black */
             text-decoration: none;
             transition: color 0.3s ease-in-out;
         }
         nav ul li a:hover {
-            color: #ff0000; /* Hover color */
+            color: #ff0000; /* Hover color remains the same */
         }
         main {
             padding: 20px;
         }
         footer {
-            background: #080707;
-            color: #fff;
+            background: #f0f0f0; /* Changed from #080707 to a light grey for better contrast with black text */
+            color: #000; /* Text color is now black */
             text-align: center;
             padding: 1em 0;
             position: fixed;
@@ -49,13 +49,13 @@
             bottom: 0;
         }
         .product-card {
-            border: 1px solid #ccc;
+            border: 1px solid #333; /* Darker border for better contrast */
             border-radius: 5px;
             overflow: hidden;
             text-align: center;
             transition: transform 0.3s ease-in-out;
-            background: #333; /* Darker background for contrast */
-            color: #fff; /* Ensure text is white */
+            background: #fff; /* Background is now white */
+            color: #000; /* Ensure text is black */
             margin: 20px auto;
             padding: 20px;
             max-width: 300px; /* Restrict the width */
@@ -68,8 +68,8 @@
             height: auto;
         }
         .button {
-            background-color: #000;
-            color: #fff;
+            background-color: #fff; /* Background is now white */
+            color: #000; /* Text color is now black */
             padding: 10px 20px;
             border: none;
             cursor: pointer;
@@ -78,6 +78,7 @@
         }
         .button:hover {
             background-color: #ff0000;
+            color: #fff; /* Text color on hover is now white */
         }
         .content-wrapper {
             display: flex;
