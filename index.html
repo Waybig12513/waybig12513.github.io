@@ -186,15 +186,21 @@
         </nav>
         <img src="OMEN_logo_dia_rgb_white.png" alt="Omen Logo">
     </header>
-    <div class="slideshow-container">
+    <div class="slideshow-container" onmouseover="pauseSlideshow()" onmouseout="resumeSlideshow()">
         <div class="slides active">
-            <img src="image1.jpg" alt="Slide 1" style="width:100%">
+            <img src="Desktop.jpeg" alt="Slide 1" style="width:100%">
         </div>
         <div class="slides">
-            <img src="image2.jpg" alt="Slide 2" style="width:100%">
+            <img src="Header_Omen14@2x.jpg" alt="Slide 2" style="width:100%">
         </div>
         <div class="slides">
-            <img src="image3.jpg" alt="Slide 3" style="width:100%">
+            <img src="HP_OGH Promotional Banners_1920x1080_GeForce-Now-Evergreen-30-days-trial.jpg" alt="Slide 3" style="width:100%">
+        </div>
+        <div class="slides">
+            <img src="OMEN_40_Super_Series_Home_Page_Hero_1920x1080_v2_pc.jpg" alt="Slide 4" style="width:100%">
+        </div>
+        <div class="slides">
+            <img src="OMEN-Riot-Desktop.png" alt="Slide 5" style="width:100%">
         </div>
         <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
         <a class="next" onclick="plusSlides(1)">&#10095;</a>
@@ -203,6 +209,8 @@
         <span class="dot" onclick="currentSlide(1)"></span> 
         <span class="dot" onclick="currentSlide(2)"></span> 
         <span class="dot" onclick="currentSlide(3)"></span> 
+        <span class="dot" onclick="currentSlide(4)"></span> 
+        <span class="dot" onclick="currentSlide(5)"></span> 
     </div>
     <main>
         <section id="home">
@@ -307,11 +315,11 @@
     </footer>
     <script>
         let slideIndex = 0;
-        showSlides();
+        let slideInterval;
+        const slides = document.getElementsByClassName("slides");
+        const dots = document.getElementsByClassName("dot");
 
         function showSlides() {
-            let slides = document.getElementsByClassName("slides");
-            let dots = document.getElementsByClassName("dot");
             for (let i = 0; i < slides.length; i++) {
                 slides[i].style.display = "none";
             }
@@ -322,16 +330,30 @@
             }
             slides[slideIndex-1].style.display = "block";
             dots[slideIndex-1].className += " active";
-            setTimeout(showSlides, 2000); // Change image every 2 seconds
+            slideInterval = setTimeout(showSlides, 2000); // Change image every 2 seconds
         }
 
         function plusSlides(n) {
+            clearTimeout(slideInterval);
             showSlides(slideIndex += n);
         }
 
         function currentSlide(n) {
+            clearTimeout(slideInterval);
             showSlides(slideIndex = n);
         }
+
+        function pauseSlideshow() {
+            clearTimeout(slideInterval);
+        }
+
+        function resumeSlideshow() {
+            slideInterval = setTimeout(showSlides, 2000);
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            showSlides();
+        });
     </script>
 </body>
 </html>
