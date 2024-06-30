@@ -22,12 +22,14 @@
             color: #fff; /* Text color is white */
             padding: 1em 2em;
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
             font-family: 'Barlow', sans-serif; /* Font family for the header */
+            position: relative;
         }
         header img {
             height: 50px; /* Adjust the height of the logo as needed */
+            margin-right: auto; /* Align logo to the left */
         }
         nav ul {
             list-style-type: none;
@@ -42,10 +44,11 @@
             color: #fff; /* Text color is white */
             text-decoration: none;
             font-size: 16px;
-            transition: color 0.3s ease-in-out;
+            transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
         }
         nav ul li a:hover {
             color: #ff0000; /* Hover color */
+            transform: translateY(-5px); /* Move up on hover */
         }
         main {
             padding: 20px;
