@@ -48,6 +48,22 @@
             border-radius: 5px;
             font-size: 20px;
         }
+        .timer {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+            z-index: 10; /* Ensure the timer is above other elements */
+        }
         .prev, .next {
             cursor: pointer;
             position: absolute;
@@ -206,13 +222,39 @@
     </header>
     <div class="slideshow-container" onmouseover="pauseSlideshow()" onmouseout="resumeSlideshow()">
         <div class="slides active">
+            <div class="timer"></div>
             <img src="Desktop.jpeg" alt="Slide 1">
             <div class="slide-text">Ali & Dylan</div>
         </div>
-        <!-- Your existing slides -->
+        <div class="slides">
+            <div class="timer"></div>
+            <img src="Header_Omen14@2x.jpg" alt="Slide 2">
+            <div class="slide-text">Ali & Dylan</div>
+        </div>
+        <div class="slides">
+            <div class="timer"></div>
+            <img src="HP_OGH Promotional Banners_1920x1080_GeForce-Now-Evergreen-30-days-trial.jpg" alt="Slide 3">
+            <div class="slide-text">Ali & Dylan</div>
+        </div>
+        <div class="slides">
+            <div class="timer"></div>
+            <img src="OMEN_40_Super_Series_Home_Page_Hero_1920x1080_v2_pc.jpg" alt="Slide 4">
+            <div class="slide-text">Ali & Dylan</div>
+        </div>
+        <div class="slides">
+            <div class="timer"></div>
+            <img src="OMEN-Riot-Desktop.png" alt="Slide 5">
+            <div class="slide-text">Ali & Dylan</div>
+        </div>
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
     </div>
     <div class="dots">
-        <!-- Your existing dots -->
+        <span class="dot" onclick="currentSlide(1)"></span> 
+        <span class="dot" onclick="currentSlide(2)"></span> 
+        <span class="dot" onclick="currentSlide(3)"></span> 
+        <span class="dot" onclick="currentSlide(4)"></span> 
+        <span class="dot" onclick="currentSlide(5)"></span> 
     </div>
     <main>
         <section id="home">
@@ -318,10 +360,13 @@
     <script>
         let slideIndex = 0;
         let slideInterval;
+        let countdownInterval;
         const slides = document.getElementsByClassName("slides");
         const dots = document.getElementsByClassName("dot");
+        const countdownTime = 5; // 5 seconds countdown
 
         function showSlides() {
+            clearInterval(countdownInterval);
             for (let i = 0; i < slides.length; i++) {
                 slides[i].style.display = "none";
             }
@@ -332,7 +377,8 @@
             }
             slides[slideIndex-1].style.display = "block";
             dots[slideIndex-1].className += " active";
-            slideInterval = setTimeout(showSlides, 5000); // Change image every 2 seconds
+            startCountdown(slides[slideIndex-1].getElementsByClassName("timer")[0]);
+            slideInterval = setTimeout(showSlides, countdownTime * 1000); // Change image every countdownTime seconds
         }
 
         function plusSlides(n) {
@@ -349,11 +395,26 @@
 
         function pauseSlideshow() {
             clearTimeout(slideInterval);
+            clearInterval(countdownInterval);
         }
 
         function resumeSlideshow() {
             clearTimeout(slideInterval);
-            slideInterval = setTimeout(showSlides, 5000);
+            slideInterval = setTimeout(showSlides, countdownTime * 1000);
+            startCountdown(slides[slideIndex-1].getElementsByClassName("timer")[0]);
+        }
+
+        function startCountdown(timerElement) {
+            let timeLeft = countdownTime;
+            timerElement.textContent = timeLeft;
+            countdownInterval = setInterval(() => {
+                timeLeft--;
+                if (timeLeft < 0) {
+                    clearInterval(countdownInterval);
+                } else {
+                    timerElement.textContent = timeLeft;
+                }
+            }, 1000);
         }
 
         document.addEventListener("DOMContentLoaded", () => {
