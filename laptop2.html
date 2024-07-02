@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Laptop 2</title>
+    <!-- Link to Montserrat font for body text -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Link to Barlow font for header text -->
     <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="favicon.png">
     <style>
@@ -48,6 +50,29 @@
         .button:hover {
             background-color: #ff0000;
         }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .discount {
+            color: red;
+        }
+        .vendor-link {
+            color: blue;
+            text-decoration: none;
+        }
+        .vendor-link:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
@@ -59,7 +84,63 @@
         <img src="laptop2_image.jpg" alt="Laptop 2 Image" class="product-image">
         <p>Price: $999.99</p>
         <a href="#" class="button">Buy Now</a>
+
+        <table>
+            <tr>
+                <th>Merchant</th>
+                <th>Base</th>
+                <th>Promo</th>
+                <th>Shipping</th>
+                <th>Tax</th>
+                <th>Availability</th>
+                <th>Total</th>
+            </tr>
+            <tr>
+                <td><a href="https://www.bestbuy.com/site/searchpage.jsp?st=iphone+15" class="vendor-link" target="_blank">Best Buy</a></td>
+                <td>$999.00</td>
+                <td class="discount">Discount</td>
+                <td>+FREE s/h</td>
+                <td>—</td>
+                <td>In stock</td>
+                <td>$999.00</td>
+            </tr>
+            <tr>
+                <td><a href="https://www.newegg.com/p/pl?d=iphone+15" class="vendor-link" target="_blank">Newegg</a></td>
+                <td>$999.00</td>
+                <td class="discount">Discount</td>
+                <td>+FREE s/h</td>
+                <td>—</td>
+                <td>In stock</td>
+                <td>$999.00</td>
+            </tr>
+            <tr>
+                <td><a href="https://www.memoryc.com/?query=iphone+15" class="vendor-link" target="_blank">MemoryC</a></td>
+                <td>$1044.13</td>
+                <td class="discount">Discount</td>
+                <td>+FREE s/h</td>
+                <td>—</td>
+                <td>Available soon</td>
+                <td>$1044.13</td>
+            </tr>
+            <tr>
+                <td><a href="https://www.amazon.com/s?k=iphone+15" class="vendor-link" target="_blank">Amazon</a></td>
+                <td>$1066.51</td>
+                <td class="discount">Discount</td>
+                <td>+Prime</td>
+                <td>—</td>
+                <td>In stock</td>
+                <td>$1066.51</td>
+            </tr>
+            <tr>
+                <td><a href="https://www.bhphotovideo.com/c/search?Ntt=iphone+15" class="vendor-link" target="_blank">B&H</a></td>
+                <td>$1093.00</td>
+                <td class="discount">Discount</td>
+                <td>+FREE s/h</td>
+                <td>—</td>
+                <td>In stock</td>
+                <td>$1093.00</td>
+            </tr>
+        </table>
     </main>
 </body>
 </html>
-
