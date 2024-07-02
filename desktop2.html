@@ -3,6 +3,152 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desktop 1</title>
+    <!-- Link to Montserrat font for body text -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Link to Barlow font for header text -->
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #fff;
+            color: #000;
+        }
+        header {
+            background: #000;
+            color: #fff;
+            padding: 1em 2em;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'Barlow', sans-serif;
+        }
+        header img {
+            height: 50px;
+        }
+        main {
+            max-width: 800px;
+            margin: auto;
+            text-align: center;
+        }
+        .product-image {
+            width: 100%;
+            height: auto;
+        }
+        .button {
+            background-color: #000;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+            text-decoration: none;
+        }
+        .button:hover {
+            background-color: #ff0000;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .discount {
+            color: red;
+        }
+        .vendor-link {
+            color: blue;
+            text-decoration: none;
+        }
+        .vendor-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="OMEN_logo_dia_rgb_white.png" alt="Omen Logo">
+    </header>
+    <main>
+        <h1>Desktop 1</h1>
+        <img src="desktop1_image.jpg" alt="Desktop 1 Image" class="product-image">
+        <p>Price: $1299.99</p>
+        <a href="#" class="button">Buy Now</a>
+
+        <table>
+            <tr>
+                <th>Merchant</th>
+                <th>Base</th>
+                <th>Promo</th>
+                <th>Shipping</th>
+                <th>Tax</th>
+                <th>Availability</th>
+                <th>Total</th>
+            </tr>
+            <tr>
+                <td><a href="https://www.bestbuy.com/site/searchpage.jsp?st=iphone+15" class="vendor-link" target="_blank">Best Buy</a></td>
+                <td>$999.00</td>
+                <td class="discount">Discount</td>
+                <td>+FREE s/h</td>
+                <td>—</td>
+                <td>In stock</td>
+                <td>$999.00</td>
+            </tr>
+            <tr>
+                <td><a href="https://www.newegg.com/p/pl?d=iphone+15" class="vendor-link" target="_blank">Newegg</a></td>
+                <td>$999.00</td>
+                <td class="discount">Discount</td>
+                <td>+FREE s/h</td>
+                <td>—</td>
+                <td>In stock</td>
+                <td>$999.00</td>
+            </tr>
+            <tr>
+                <td><a href="https://www.memoryc.com/?query=iphone+15" class="vendor-link" target="_blank">MemoryC</a></td>
+                <td>$1044.13</td>
+                <td class="discount">Discount</td>
+                <td>+FREE s/h</td>
+                <td>—</td>
+                <td>Available soon</td>
+                <td>$1044.13</td>
+            </tr>
+            <tr>
+                <td><a href="https://www.amazon.com/s?k=iphone+15" class="vendor-link" target="_blank">Amazon</a></td>
+                <td>$1066.51</td>
+                <td class="discount">Discount</td>
+                <td>+Prime</td>
+                <td>—</td>
+                <td>In stock</td>
+                <td>$1066.51</td>
+            </tr>
+            <tr>
+                <td><a href="https://www.bhphotovideo.com/c/search?Ntt=iphone+15" class="vendor-link" target="_blank">B&H</a></td>
+                <td>$1093.00</td>
+                <td class="discount">Discount</td>
+                <td>+FREE s/h</td>
+                <td>—</td>
+                <td>In stock</td>
+                <td>$1093.00</td>
+            </tr>
+        </table>
+    </main>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Desktop 2</title>
     <!-- Link to Montserrat font for body text -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
