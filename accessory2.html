@@ -50,6 +50,29 @@
         .button:hover {
             background-color: #ff0000;
         }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .discount {
+            color: red;
+        }
+        .vendor-link {
+            color: blue;
+            text-decoration: none;
+        }
+        .vendor-link:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
@@ -61,7 +84,29 @@
         <img src="accessory2_image.jpg" alt="Accessory 2 Image" class="product-image">
         <p>Price: $59.99</p>
         <a href="#" class="button">Buy Now</a>
-    </main>
-</body>
-</html>
 
+        <table>
+            <tr>
+                <th>Merchant</th>
+                <th>Base</th>
+                <th>Promo</th>
+                <th>Shipping</th>
+                <th>Tax</th>
+                <th>Availability</th>
+                <th>Total</th>
+            </tr>
+            <tr>
+                <td><a href="https://www.bestbuy.com/site/searchpage.jsp?st=iphone+15" class="vendor-link" target="_blank">Best Buy</a></td>
+                <td>$999.00</td>
+                <td class="discount">Discount</td>
+                <td>+FREE s/h</td>
+                <td>—</td>
+                <td>In stock</td>
+                <td>$999.00</td>
+            </tr>
+            <tr>
+                <td><a href="https://www.newegg.com/p/pl?d=iphone+15" class="vendor-link" target="_blank">Newegg</a></td>
+                <td>$999.00</td>
+                <td class="discount">Discount</td>
+                <td>+FREE s/h</td>
+                <td
