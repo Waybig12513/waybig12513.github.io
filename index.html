@@ -19,14 +19,21 @@
         }
         .slideshow-container {
             max-width: 100%;
+            height: 500px; /* Set a fixed height for the slideshow container */
             position: relative;
             margin: auto;
             overflow: hidden;
+            background-color: #000; /* Optional: set a background color */
         }
         .slides {
             display: none;
             width: 100%;
-            position: relative;
+            height: 100%; /* Ensure images take up the full height of the container */
+        }
+        .slides img {
+            width: 100%;
+            height: 100%; /* Ensure images take up the full height of the container */
+            object-fit: cover; /* This will make sure the images cover the entire container without distortion */
         }
         .active {
             display: block;
@@ -199,23 +206,23 @@
     </header>
     <div class="slideshow-container" onmouseover="pauseSlideshow()" onmouseout="resumeSlideshow()">
         <div class="slides active">
-            <img src="Desktop.jpeg" alt="Slide 1" style="width:100%">
+            <img src="Desktop.jpeg" alt="Slide 1">
             <div class="slide-text">Ali & Dylan</div>
         </div>
         <div class="slides">
-            <img src="Header_Omen14@2x.jpg" alt="Slide 2" style="width:100%">
+            <img src="Header_Omen14@2x.jpg" alt="Slide 2">
             <div class="slide-text">Ali & Dylan</div>
         </div>
         <div class="slides">
-            <img src="HP_OGH Promotional Banners_1920x1080_GeForce-Now-Evergreen-30-days-trial.jpg" alt="Slide 3" style="width:100%">
+            <img src="HP_OGH Promotional Banners_1920x1080_GeForce-Now-Evergreen-30-days-trial.jpg" alt="Slide 3">
             <div class="slide-text">Ali & Dylan</div>
         </div>
         <div class="slides">
-            <img src="OMEN_40_Super_Series_Home_Page_Hero_1920x1080_v2_pc.jpg" alt="Slide 4" style="width:100%">
+            <img src="OMEN_40_Super_Series_Home_Page_Hero_1920x1080_v2_pc.jpg" alt="Slide 4">
             <div class="slide-text">Ali & Dylan</div>
         </div>
         <div class="slides">
-            <img src="OMEN-Riot-Desktop.png" alt="Slide 5" style="width:100%">
+            <img src="OMEN-Riot-Desktop.png" alt="Slide 5">
             <div class="slide-text">Ali & Dylan</div>
         </div>
         <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
@@ -346,17 +353,19 @@
             }
             slides[slideIndex-1].style.display = "block";
             dots[slideIndex-1].className += " active";
-            slideInterval = setTimeout(showSlides, 2000); // Change image every 2 seconds
+            slideInterval = setTimeout(showSlides, 5000); // Change image every 2 seconds
         }
 
         function plusSlides(n) {
             clearTimeout(slideInterval);
-            showSlides(slideIndex += n);
+            slideIndex += n - 1; // Adjust slideIndex for the next showSlides call
+            showSlides();
         }
 
         function currentSlide(n) {
             clearTimeout(slideInterval);
-            showSlides(slideIndex = n);
+            slideIndex = n - 1; // Set slideIndex to the correct slide number
+            showSlides();
         }
 
         function pauseSlideshow() {
@@ -364,7 +373,8 @@
         }
 
         function resumeSlideshow() {
-            slideInterval = setTimeout(showSlides, 2000);
+            clearTimeout(slideInterval);
+            slideInterval = setTimeout(showSlides, 5000);
         }
 
         document.addEventListener("DOMContentLoaded", () => {
