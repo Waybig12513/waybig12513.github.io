@@ -158,7 +158,7 @@
             bottom: 0; /* Move the footer up when hovered over */
         }
         .product-card {
-            border: 1px solid #FF0000; /* Darker border for better contrast */
+            border: 1px solid #000; /* Darker border for better contrast */
             border-radius: 5px;
             overflow: hidden;
             text-align: center;
@@ -209,7 +209,9 @@
         .product-carousel {
             display: flex;
             overflow-x: auto;
+            overflow-y: hidden;
             scroll-snap-type: x mandatory;
+
         }
         .product-carousel::-webkit-scrollbar {
             display: none; /* Hide the scrollbar */
@@ -221,7 +223,7 @@
             transition: transform 0.3s ease-in-out;
         }
         .product-card:hover, .product-carousel .product-card:hover {
-            transform: scale(1.05);
+            transform: scale(1.1);
         }
         .product-carousel-container {
             position: relative;
