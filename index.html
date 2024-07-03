@@ -169,9 +169,6 @@
             padding: 20px;
             max-width: 300px; /* Restrict the width */
         }
-        .product-card:hover {
-            transform: scale(1.05);
-        }
         .product-card img {
             width: 100%;
             height: auto;
@@ -208,6 +205,43 @@
         }
         .contact-info p {
             margin: 5px 0;
+        }
+        .product-carousel {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+        }
+        .product-carousel::-webkit-scrollbar {
+            display: none; /* Hide the scrollbar */
+        }
+        .product-carousel .product-card {
+            scroll-snap-align: center;
+            flex: 0 0 auto;
+            margin: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+        .product-carousel .product-card:hover {
+            transform: scale(1.1);
+        }
+        .product-carousel-container {
+            position: relative;
+        }
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            border: none;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 10;
+        }
+        .carousel-button.prev {
+            left: 0;
+        }
+        .carousel-button.next {
+            right: 0;
         }
     </style>
 </head>
@@ -263,21 +297,47 @@
     <main>
         <section id="home">
             <h2>Home</h2>
-            <p>Discover the latest in Omen products</p>
-            <div class="content-wrapper">
-                <!-- Example Product Cards -->
-                <div class="product-card">
-                    <img src="Omen_Transcend16.jpg" alt="OMEN Logo">
-                    <h2>Omen Transcend 16</h2>
-                    <p>$199.99</p>
-                    <a href="laptop2.html" class="button" target="_blank">Buy Now</a>
+            <div class="product-carousel-container">
+                <button class="carousel-button prev" onclick="scrollCarousel(-1)">&#10094;</button>
+                <div class="product-carousel">
+                    <div class="product-card">
+                        <img src="OMEN_logo_dia_rgb_black.png" alt="OMEN Logo">
+                        <h2>Product 1</h2>
+                        <p>$199.99</p>
+                        <a href="product1.html" class="button" target="_blank">Buy Now</a>
+                    </div>
+                    <div class="product-card">
+                        <img src="OMEN_logo_dia_rgb_black.png" alt="OMEN Logo">
+                        <h2>Product 2</h2>
+                        <p>$299.99</p>
+                        <a href="product2.html" class="button" target="_blank">Buy Now</a>
+                    </div>
+                    <div class="product-card">
+                        <img src="OMEN_logo_dia_rgb_black.png" alt="OMEN Logo">
+                        <h2>Product 3</h2>
+                        <p>$399.99</p>
+                        <a href="product3.html" class="button" target="_blank">Buy Now</a>
+                    </div>
+                    <div class="product-card">
+                        <img src="OMEN_logo_dia_rgb_black.png" alt="OMEN Logo">
+                        <h2>Product 4</h2>
+                        <p>$499.99</p>
+                        <a href="product4.html" class="button" target="_blank">Buy Now</a>
+                    </div>
+                    <div class="product-card">
+                        <img src="OMEN_logo_dia_rgb_black.png" alt="OMEN Logo">
+                        <h2>Product 5</h2>
+                        <p>$599.99</p>
+                        <a href="product5.html" class="button" target="_blank">Buy Now</a>
+                    </div>
+                    <div class="product-card">
+                        <img src="OMEN_logo_dia_rgb_black.png" alt="OMEN Logo">
+                        <h2>Product 6</h2>
+                        <p>$699.99</p>
+                        <a href="product6.html" class="button" target="_blank">Buy Now</a>
+                    </div>
                 </div>
-                <div class="product-card">
-                    <img src="Omen_40l.jpeg" alt="OMEN Logo">
-                    <h2>Omen 40L</h2>
-                    <p>$299.99</p>
-                    <a href="desktop2.html" class="button" target="_blank">Buy Now</a>
-                </div>
+                <button class="carousel-button next" onclick="scrollCarousel(1)">&#10095;</button>
             </div>
         </section>
         <section id="Displays">
@@ -419,6 +479,16 @@
                     timerElement.textContent = timeLeft;
                 }
             }, 1000);
+        }
+
+        function scrollCarousel(direction) {
+            const carousel = document.querySelector('.product-carousel');
+            const scrollAmount = carousel.clientWidth / 3; // Adjust to scroll one product at a time
+            if (direction === 1) {
+                carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+            } else {
+                carousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+            }
         }
 
         document.addEventListener("DOMContentLoaded", () => {
