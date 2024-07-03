@@ -16,6 +16,7 @@
             padding: 0;
             background-color: #fff; /* Background is now white */
             color: #000; /* Set default text color to black */
+	    overflow-x: hidden;
         }
         .slideshow-container {
             max-width: 100%;
@@ -159,7 +160,7 @@
         }
         .product-card {
             /*border: 1px solid #000; /* Darker border for better contrast */
-           /* border-radius: 5px;*/
+            /*border-radius: 5px;*/
             overflow: hidden;
             text-align: center;
             transition: transform 0.3s ease-in-out;
@@ -171,7 +172,7 @@
         }
         .product-card img {
             width: 100%;
-            height: auto;
+            height: 255px;
         }
         .button {
             background-color: #000; /* Background is now black */
@@ -207,21 +208,24 @@
             margin: 5px 0;
         }
         .product-carousel {
-            display: flex;
-            overflow-x: auto;
-            overflow-y: hidden;
-            scroll-snap-type: x mandatory;
-            overflow: visible;
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch; /* Enables momentum scrolling on iOS devices */
+}
 
-        }
-        .product-carousel::-webkit-scrollbar {
-            display: none; /* Hide the scrollbar */
-        }
+.product-carousel::-webkit-scrollbar {
+    display: none; /* Hide the scrollbar */
+}
+
         .product-carousel .product-card {
             scroll-snap-align: center;
             flex: 0 0 auto;
             margin: 20px;
             transition: transform 0.3s ease-in-out;
+            /*overflow: visible;*/
         }
         .product-card:hover, .product-carousel .product-card:hover {
             transform: scale(1.1);
@@ -487,14 +491,14 @@
         }
 
         function scrollCarousel(direction) {
-            const carousel = document.querySelector('.product-carousel');
-            const scrollAmount = carousel.clientWidth / 3; // Adjust to scroll one product at a time
-            if (direction === 1) {
-                carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-            } else {
-                carousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-            }
-        }
+    const carousel = document.querySelector('.product-carousel');
+    const scrollAmount = carousel.clientWidth / 3; // Adjust to scroll one product at a time
+    if (direction === 1) {
+        carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    } else {
+        carousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    }
+}
 
         document.addEventListener("DOMContentLoaded", () => {
             showSlides();
